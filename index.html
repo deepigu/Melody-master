@@ -16,8 +16,8 @@
             background: linear-gradient(to right, rgba(44, 62, 80, 0.9), rgba(253, 116, 108, 0.9));
             color: white;
             text-align: center;
-          /*  background-image: url('https://picsum.photos/id/1019/1920/108'); */
-		background-image: url('red.jpg');
+           background-image: url('https://picsum.photos/id/1019/1920/108'); 
+		
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -92,20 +92,21 @@
         
         .logo h1 {
             margin: 0;
-            font-size: 36px;
+            font-size: 24px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         nav {
-            margin-left: auto;
+            display: flex;
+		align-item: center;
         }
         
         nav ul {
             list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 20px;
             font-size: 18px;
-            font-weight: 600;
+            font-weight: bold;
         }
         
         nav a {
@@ -115,10 +116,56 @@
         }
         
         nav a:hover {
-            color: #ff9a8b;
+            color: #fd746c;
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
-        
+        .menu-icon {
+		display: none;
+		font-size: 28px;
+		background: none;
+		border: none;
+		color: white;
+		cursor: pointer;
+	}
+	    .cta {
+		     background-color: #FD746C;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* === RESPONSIVE NAVIGATION === */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: rgba(44, 62, 80, 0.95);
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li {
+                padding: 10px;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+		    
+		
         section {
             padding: 70px 20px;
             position: relative;
@@ -576,14 +623,16 @@ header {
         <div class="logo">
             <img src="PHOTO-2025-02-19-02-14-15.jpg" alt="Melody Master Co Logo">
         </div>
-       <nav>
-            <ul>
+        <nav>
+            <button class="menu-icon" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links">
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#request-song">Request a Song</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <button class="cta">Get Your Custom Song</button> 
     </header>
 
     <section id="hero">
@@ -730,7 +779,12 @@ header {
             
         </div>
     </footer>
-    
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        }
+    </script>
+
     <!-- Script to generate floating 3D hearts -->
     <script>
 document.addEventListener("DOMContentLoaded", function () {
