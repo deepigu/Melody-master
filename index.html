@@ -1,4 +1,4 @@
-
+<!------
 
 <!DOCTYPE html>
 <html lang="en">
@@ -692,10 +692,10 @@ header {
             <a href="https://www.facebook.com/share/1GXxmjQk9j/"><i class="fab fa-facebook"></i> Facebook</a>
             
         </div>
-    </footer>
+    </footer> ----->
     
     <!-- Script to generate floating 3D hearts -->
-    <script>
+  <!----  <script>
 document.addEventListener("DOMContentLoaded", function () {
     setInterval(createFallingHeart, 300); // Creates hearts every 300ms
 });
@@ -1636,3 +1636,780 @@ function createFallingHeart() {
     </script>
 </body>
 </html> ----->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melody Master Co - Custom Song Service</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, rgba(44, 62, 80, 0.9), rgba(253, 116, 108, 0.9));
+            color: white;
+            text-align: center;
+          /*  background-image: url('Roses.jpg'); 
+		background-image: url('Roses.jpg');*/
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Overlay for background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(44, 62, 80, 0.85), rgba(253, 116, 108, 0.85));
+            z-index: -1;
+        }
+        
+        /* 3D Hearts */
+        .heart {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 20px;
+            z-index: -1;
+            animation: float 15s linear infinite;
+            text-shadow: 0 0 5px #ff6b6b, 
+                         0 0 10px #ff6b6b,
+                         2px 2px 5px rgba(0,0,0,0.3);
+            transform-style: preserve-3d;
+            transform: perspective(500px) rotateY(0deg);
+        }
+        
+        @keyframes float {
+            0% {
+                transform: perspective(500px) rotateY(0deg) translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: perspective(500px) rotateY(360deg) translateY(-100vh) translateX(20px);
+                opacity: 0;
+            }
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(44, 62, 80, 0.85);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo h1 {
+            margin: 0;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav {
+            margin-left: auto;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        
+        nav a:hover {
+            color: #ff9a8b;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+        
+        section {
+            padding: 70px 20px;
+            position: relative;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        
+        #hero {
+		background: linear-gradient(to right, rgba(44, 62, 80, 0.85), rgba(253, 116, 108, 0.85));
+           /* background-image: url('valentine_s_day_couple_photography_ideas.jpg'); */
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        
+   #how-it-works {
+   background: linear-gradient(to right, rgba(44, 62, 80, 0.85), rgba(253, 116, 108, 0.85));
+   }
+            /*     background-image: url('valentine_s_day_couple_photography_ideas.jpg');
+        } */
+	    
+        
+        #how-it-works::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 62, 80, 0.85);
+            z-index: -1;
+        }
+        
+       #testimonials {
+	    background: linear-gradient(to right, rgba(44, 62, 80, 0.85), rgba(253, 116, 108, 0.85));
+   }
+		 /* background-image: url('valentine_s_day_couple_photography_ideas.jpg');
+        }*/
+        
+        #testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 62, 80, 0.85);
+            z-index: -1;
+        }
+   /*   #steps {
+            background-image: url('download.png');
+        } */
+        .steps {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .step {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: 15px;
+            width: 250px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .step::after {
+            content: '♫';
+            position: absolute;
+            bottom: -10px;
+            right: 10px;
+            font-size: 72px;
+            opacity: 0.1;
+            transform: rotate(-15deg);
+        }
+        /* Media Queries for responsiveness */
+@media screen and (max-width: 768px) {
+    /* Adjust layout for tablets and smaller screens */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+ nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .steps {
+        flex-direction: column;
+    }
+    .step {
+        width: 100%;
+    }
+    .pricing-box {
+        width: 100%;
+    }
+    section {
+        padding: 40px 15px;
+    }
+    #hero h2 {
+        font-size: 28px;
+    }
+}
+@media screen and (max-width: 480px) {
+    /* Adjust layout for smaller mobile screens */
+    header {
+        padding: 10px;
+    }
+    .logo img {
+        height: 40px;
+    }
+    .logo h1 {
+        font-size: 28px;
+    }
+header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background-color: #333;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transition: top 0.3s;
+    }
+        nav {
+            margin-left: auto;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            font-size: 18px;
+            font-weight: 600;
+			padding: 0;
+			margin: 0;
+        }
+        nav ul li {
+		display: inline;
+		}
+		nav ul li a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #f4a261;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+        
+	
+    nav ul {
+        gap: 10px;
+    }
+ header {
+        top: -100px;
+    }
+    /* Show the nav when hovered */
+    header:hover {
+        top: 0;
+    }
+    .step {
+        width: 100%;
+        padding: 20px;
+    }
+    .pricing-box {
+        width: 100%;
+        padding: 20px;
+    }
+    #hero h2 {
+        font-size: 24px;
+    }
+}
+        form {
+            max-width: 500px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        input, textarea, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(22, 160, 133, 0.5);
+        }
+        
+        button {
+            background: #E67E22;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        button:hover {
+            background: #D35400;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        #hero .cta {
+            background: #16A085;
+            padding: 25px 55px;
+            font-size: 24px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        #hero .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #16A085, #1abc9c);
+            z-index: -1;
+            transition: all 0.5s;
+        }
+        
+        #hero .cta:hover {
+            transform: scale(1.08) translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        #hero .cta:hover::before {
+            transform: rotate(180deg);
+        }
+        
+        .testimonial {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: 15px;
+            max-width: 500px;
+            margin: 20px auto;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: 0;
+            left: 15px;
+            font-size: 60px;
+            color: rgba(255, 255, 255, 0.3);
+            line-height: 1;
+        }
+ #step {
+            background-image: url('download.jpeg');
+        } 
+        
+       
+        .steps {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .step {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: 15px;
+            width: 250px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+ 
+        .pricing {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .pricing-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            width: 250px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            margin-top: 50px;
+        }
+        .pricing-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        .pricing-box h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #ff9a8b;
+        }
+        .pricing-box p {
+            margin-bottom: 20px;
+        }
+        .pricing-box .price {
+            font-size: 40px;
+            font-weight: bold;
+            color: #16A085;
+        }
+        .pricing-box button {
+            background: #ff9a8b;
+            color: white;
+            padding: 15px;
+            border-radius: 30px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        .pricing-box button:hover {
+            background: #16A085;
+            transform: scale(1.05);
+        }
+        footer {
+            background: rgba(44, 62, 80, 0.95);
+            padding: 40px 20px;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-media a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+            display: inline-block;
+        }
+        
+        .social-media a:hover {
+            color: #ff9a8b;
+            transform: scale(1.2);
+        }
+        
+        h2 {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+            font-size: 36px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, #16A085, #E67E22);
+            border-radius: 3px;
+        }
+	    @keyframes falling-hearts {
+    0% {
+        transform: translateY(-10vh);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+.heart {
+    position: fixed;
+    top: -10vh;
+    font-size: 24px;
+    color: red;
+    animation: falling-hearts 5s linear infinite;
+    pointer-events: none;
+    user-select: none;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="PHOTO-2025-02-19-02-14-15.jpg" alt="Melody Master Co Logo">
+        </div>
+       <nav>
+            <ul>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#request-song">Request a Song</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="hero">
+        <h2>Create a Melody That's Truly Yours!</h2>
+        <p>Your story deserves a unique soundtrack. Let Melody Master Co create a custom song just for you.</p>
+         <button class="cta" onclick="location.href='#request-song'">Start Now</button>
+    </section>
+    <section id="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <h3>Step 1</h3>
+                <p>Fill out a simple form sharing your preferences, story, and any special requests.</p>
+            </div>
+            <div class="step">
+                <h3>Step 2</h3>
+                <p>Our talented musicians craft a custom song based on your unique story and preferences.</p>
+            </div>
+            <div class="step">
+                <h3>Step 3</h3>
+                <p>Receive your personalized song and enjoy a melody that speaks to you!</p>
+            </div>
+        </div>
+    </section>
+	
+	    <section id="about">
+        <h2>Song Crafters: Customized Musical Experiences</h2>
+        <p>At Song Crafters, we believe that music is one of the most powerful forms of expression. It has the ability to capture emotions, tell stories, and celebrate milestones like no other medium can. That’s why we’re dedicated to offering personalized musical experiences tailored to reflect your unique journey, emotions, or special moments.</p>
+    </section>
+<section id="services">
+        <h2>What We Can Do For You</h2>
+        <p>Our comprehensive services are designed to cater to your every musical need.</p>
+        <div class="steps">
+            <div class="step">
+                <h3>Lyrics Generation</h3>
+                <p>Share your story, and our lyricists will craft words that resonate deeply, capturing the essence of your emotions.</p>
+            </div>
+            <div class="step">
+                <h3>Lyrics Confirmation</h3>
+                <p>We refine your lyrics with your feedback, ensuring every word reflects your vision perfectly.</p>
+            </div>
+            <div class="step">
+                <h3>Song Production</h3>
+                <p>Our team handles composition, arrangement, and production, creating a polished, custom track that brings your lyrics to life.</p>
+            </div>
+        </div>
+    </section>
+    <section id="process">
+        <h2>Working Process</h2>
+        <p>Here’s how we make your musical experience truly yours:</p>
+        <div class="steps">
+            <div class="step">
+                <h3>Step 1: Share Your Story</h3>
+                <p>Tell us about your emotions, event, or celebration. We’ll work with you to understand your vision.</p>
+            </div>
+            <div class="step">
+                <h3>Step 2: Song Creation</h3>
+                <p>Our team will write, arrange, and compose the perfect piece that reflects your story.</p>
+            </div>
+            <div class="step">
+                <h3>Step 3: Finalize & Produce</h3>
+                <p>Once you approve, we’ll produce the track and deliver the polished final version.</p>
+            </div>
+        </div>
+    </section>
+	
+ <section id="pricing">
+        <h2>Our Pricing Packages</h2>
+        <p>Choose the plan that fits your needs:</p>
+        <div class="pricing">
+            <div class="pricing-box">
+                <h3>Basic</h3>
+                <p>₹950 per song</p>
+                <p>Song Duration: 1-2 mins</p>
+                <p>2-3 Para Lyrics</p>
+                <p>3 Revisions only</p>
+                <button onclick="location.href='#request-song'">Start Now</button>
+            </div>
+            <div class="pricing-box">
+                <h3>Standard</h3>
+                <p>₹1500 per song</p>
+                <p>Song Duration: 2-3.5 mins</p>
+                <p>3-5 Para Lyrics</p>
+                <p>5 Revisions only</p>
+                <button onclick="location.href='#request-song'">Start Now</button>
+            </div>
+            <div class="pricing-box">
+                <h3>Premium</h3>
+                <p>₹2000 per song</p>
+                <p>Song Duration: 4-5 mins</p>
+                <p>Max 8 Para Lyrics</p>
+                <p>Unlimited Revisions</p>
+                <p>Receive your song within 2 hours!</p>
+                <p>Complimentary video for your custom song</p>
+                <button onclick="location.href='#request-song'">Start Now</button>
+            </div>
+        </div>
+    </section>
+    <section id="request-song">
+        <h2>Request Your Custom Song</h2>
+        <form>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="story">Your Story:</label>
+            <textarea id="story" name="story" rows="4" required></textarea>
+            
+            <label for="preferences">Music Preferences:</label>
+            <input type="text" id="preferences" name="preferences">
+            
+            
+			<button type="submit">Submit Your Request</button>
+        </form>
+    </section>
+    <section id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial">
+            <p>"The custom song we received was absolutely perfect! It brought tears to our eyes." - Deepika</p>
+        </div>
+        <div class="testimonial">
+            <p>"A truly unique gift. The song was exactly what we envisioned, and more." - Divya</p>
+        </div>
+    </section>
+ 
+    <footer id="contact">
+	<p>Contact Us:
+		<a href="mailto:melodymastersco@gmail.com">melodymastersco@gmail.com</a></p>
+        
+        <div class="social-media">
+            <a href="https://www.instagram.com/melodymastersco?igsh=c2QzcmFlNW84cjY2"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.facebook.com/share/1GXxmjQk9j/"><i class="fab fa-facebook"></i> Facebook</a>
+            
+        </div>
+    </footer>
+    
+    <!-- Script to generate floating 3D hearts -->
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    setInterval(createFallingHeart, 300); // Creates hearts every 300ms
+});
+function createFallingHeart() {
+    const heart = document.createElement("div");
+    heart.innerHTML = "❤️"; // You can change this to other emojis
+    heart.classList.add("heart");
+    document.body.appendChild(heart);
+    // Randomize position, size, and animation duration
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 10 + "px"; // Random size between 10px-30px
+    heart.style.animationDuration = Math.random() * 2 + 3 + "s"; // Between 3s and 5s
+    // Remove heart after animation ends
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+	    
+        // Function to create floating 3D hearts
+        function createHearts() {
+            const numberOfHearts = 20;
+            const container = document.body;
+            
+            // Clear any existing hearts
+            const existingHearts = document.querySelectorAll('.heart');
+            existingHearts.forEach(heart => heart.remove());
+            
+            // Create new hearts
+            for (let i = 0; i < numberOfHearts; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '<i class="fas fa-heart"></i>';
+                
+                // Random position
+                const startX = Math.random() * window.innerWidth;
+                const startY = window.innerHeight + (Math.random() * 100);
+                
+                // Random size
+                const size = 10 + (Math.random() * 30);
+                
+                // Random animation duration
+                const duration = 15 + (Math.random() * 15);
+                const delay = Math.random() * 10;
+                
+                // Style the heart
+                heart.style.left = `${startX}px`;
+                heart.style.bottom = `-${startY}px`;
+                heart.style.fontSize = `${size}px`;
+                heart.style.animationDuration = `${duration}s`;
+                heart.style.animationDelay = `${delay}s`;
+                
+                // Random rotation
+                const rotation = Math.random() * 360;
+                heart.style.transform = `perspective(500px) rotate(${rotation}deg)`;
+                
+                // Random color tint
+                const hue = 340 + (Math.random() * 40); // shades of red and pink
+                heart.style.color = `hsl(${hue}, 100%, 70%)`;
+                
+                // Add to document
+                container.appendChild(heart);
+            }
+        }
+        
+        // Create hearts when page loads
+        window.addEventListener('load', createHearts);
+        
+        // Recreate hearts periodically
+        setInterval(createHearts, 30000);
+    </script>
+</body>
+</html>
