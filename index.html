@@ -399,6 +399,60 @@
             <label for="preferences">Music Preferences:</label>
             <input type="text" id="preferences" name="preferences">
             
+    <!-- Script to generate floating 3D hearts -->
+    <script>
+        // Function to create floating 3D hearts
+        function createHearts() {
+            const numberOfHearts = 20;
+            const container = document.body;
+            
+            // Clear any existing hearts
+            const existingHearts = document.querySelectorAll('.heart');
+            existingHearts.forEach(heart => heart.remove());
+            
+            // Create new hearts
+            for (let i = 0; i < numberOfHearts; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '<i class="fas fa-heart"></i>';
+                
+                // Random position
+                const startX = Math.random() * window.innerWidth;
+                const startY = window.innerHeight + (Math.random() * 100);
+                
+                // Random size
+                const size = 10 + (Math.random() * 30);
+                
+                // Random animation duration
+                const duration = 15 + (Math.random() * 15);
+                const delay = Math.random() * 10;
+                
+                // Style the heart
+                heart.style.left = `${startX}px`;
+                heart.style.bottom = `-${startY}px`;
+                heart.style.fontSize = `${size}px`;
+                heart.style.animationDuration = `${duration}s`;
+                heart.style.animationDelay = `${delay}s`;
+                
+                // Random rotation
+                const rotation = Math.random() * 360;
+                heart.style.transform = `perspective(500px) rotate(${rotation}deg)`;
+                
+                // Random color tint
+                const hue = 340 + (Math.random() * 40); // shades of red and pink
+                heart.style.color = `hsl(${hue}, 100%, 70%)`;
+                
+                // Add to document
+                container.appendChild(heart);
+            }
+        }
+        
+        // Create hearts when page loads
+        window.addEventListener('load', createHearts);
+        
+        // Recreate hearts periodically
+        setInterval(createHearts, 30000);
+    </script>
             <button type="submit">Submit Your Request</button>
         </form>
     </section>
