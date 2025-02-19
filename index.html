@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -149,6 +150,7 @@
         #how-it-works {
             background-image: url('valentine_s_day_couple_photography_ideas.jpg');
         }
+	    
         
         #how-it-works::before {
             content: '';
@@ -162,7 +164,7 @@
         }
         
         #testimonials {
-            background-image: url('download.jpeg');
+		 background-image: url('valentine_s_day_couple_photography_ideas.jpg');
         }
         
         #testimonials::before {
@@ -176,7 +178,7 @@
             z-index: -1;
         }
        #steps {
-            background-image: url('download.jpeg');
+            background-image: url('download.png');
         } 
         .steps {
             display: flex;
@@ -211,7 +213,71 @@
             opacity: 0.1;
             transform: rotate(-15deg);
         }
-        
+        /* Media Queries for responsiveness */
+@media screen and (max-width: 768px) {
+    /* Adjust layout for tablets and smaller screens */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+ nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .steps {
+        flex-direction: column;
+    }
+
+    .step {
+        width: 100%;
+    }
+
+    .pricing-box {
+        width: 100%;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    #hero h2 {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Adjust layout for smaller mobile screens */
+    header {
+        padding: 10px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .logo h1 {
+        font-size: 28px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    .step {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .pricing-box {
+        width: 100%;
+        padding: 20px;
+    }
+
+    #hero h2 {
+        font-size: 24px;
+    }
+}
         form {
             max-width: 500px;
             margin: auto;
@@ -335,9 +401,7 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
         }
 
- #pricing {
-            background-image: url('download.jpeg');
-        } 
+ 
         .pricing {
             display: flex;
             justify-content: center;
@@ -433,17 +497,34 @@
             background: linear-gradient(to right, #16A085, #E67E22);
             border-radius: 3px;
         }
-        
-        
+
+	    @keyframes falling-hearts {
+    0% {
+        transform: translateY(-10vh);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+.heart {
+    position: fixed;
+    top: -10vh;
+    font-size: 24px;
+    color: red;
+    animation: falling-hearts 5s linear infinite;
+    pointer-events: none;
+    user-select: none;
+}
 
     </style>
 </head>
 <body>
-      
     <header>
         <div class="logo">
             <img src="PHOTO-2025-02-19-02-14-15.jpg" alt="Melody Master Co Logo">
-            <h1>Melody Master Co</h1>
         </div>
         <nav>
             <ul>
@@ -527,7 +608,7 @@
         <div class="pricing">
             <div class="pricing-box">
                 <h3>Basic</h3>
-                <p>₹500 per song</p>
+                <p>₹950 per song</p>
                 <p>Song Duration: 1-2 mins</p>
                 <p>2-3 Para Lyrics</p>
                 <p>3 Revisions only</p>
@@ -536,7 +617,7 @@
 
             <div class="pricing-box">
                 <h3>Standard</h3>
-                <p>₹1000 per song</p>
+                <p>₹1500 per song</p>
                 <p>Song Duration: 2-3.5 mins</p>
                 <p>3-5 Para Lyrics</p>
                 <p>5 Revisions only</p>
@@ -545,7 +626,7 @@
 
             <div class="pricing-box">
                 <h3>Premium</h3>
-                <p>₹1800 per song</p>
+                <p>₹2000 per song</p>
                 <p>Song Duration: 4-5 mins</p>
                 <p>Max 8 Para Lyrics</p>
                 <p>Unlimited Revisions</p>
@@ -600,10 +681,30 @@
         </div>
     </footer>
     
-    
-
     <!-- Script to generate floating 3D hearts -->
-    <script>/
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    setInterval(createFallingHeart, 300); // Creates hearts every 300ms
+});
+
+function createFallingHeart() {
+    const heart = document.createElement("div");
+    heart.innerHTML = "❤️"; // You can change this to other emojis
+    heart.classList.add("heart");
+    document.body.appendChild(heart);
+
+    // Randomize position, size, and animation duration
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 10 + "px"; // Random size between 10px-30px
+    heart.style.animationDuration = Math.random() * 2 + 3 + "s"; // Between 3s and 5s
+
+    // Remove heart after animation ends
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+	    
         // Function to create floating 3D hearts
         function createHearts() {
             const numberOfHearts = 20;
