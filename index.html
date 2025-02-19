@@ -70,7 +70,7 @@
             }
         }
         
-        header {
+       /* header {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -78,7 +78,20 @@
             background: rgba(44, 62, 80, 0.85);
             backdrop-filter: blur(5px);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        }
+        } */
+	      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 15px; /* Further reduced padding */
+        background-color: #333;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transition: top 0.3s;
+        height: 40px; /* Reduced height */
+    }
         
         .logo {
             display: flex;
