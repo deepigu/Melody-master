@@ -760,8 +760,7 @@
         (function() {
             // Initialize EmailJS with your PUBLIC key
             emailjs.init("service_49cltyg"); // REPLACE WITH YOUR ACTUAL PUBLIC KEY
-        })();
-
+        })();/*
         document.addEventListener("DOMContentLoaded", function() {
             // Improved mobile menu toggle functionality
             const menuToggle = document.getElementById('menuToggle');
@@ -800,7 +799,49 @@
                     }
                 });
             });
+            */
+
+	    document.addEventListener("DOMContentLoaded", function() {
+    // Improved mobile menu toggle functionality
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    // Toggle menu when hamburger icon is clicked
+    menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('show');
+    });
+    
+    // Get all navigation links
+    const navLinkElements = document.querySelectorAll('.nav-link');
+    
+    // Add click event listeners to each nav link
+    navLinkElements.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Get the target section from the href attribute
+            const targetId = this.getAttribute('href');
             
+            // Find the target element
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                // Close mobile menu if it's open
+                if (window.innerWidth <= 768) {
+                    e.preventDefault(); // Prevent default anchor behavior on mobile
+                    navLinks.classList.remove('show');
+                    
+                    // Scroll to the target section after a small delay
+                    setTimeout(function() {
+                        targetElement.scrollIntoView({ 
+                            behavior: 'smooth' 
+                        });
+                    }, 300);
+                }
+            }
+        });
+    });
+    
+    // Rest of your existing code...
+});
             // Contact form submission with EmailJS
             const contactForm = document.getElementById('contactForm');
             const successMessage = document.getElementById('successMessage');
