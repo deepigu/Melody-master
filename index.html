@@ -141,6 +141,14 @@
         }
         
         @media screen and (max-width: 768px) {
+		header {
+                padding: 10px 5%;
+            }
+            
+            .logo img {
+                height: 40px;
+            }
+            
             .menu-toggle {
                 display: block;
             }
@@ -160,16 +168,20 @@
             
             .nav-links.show {
                 display: flex;
+		    z-index: 1000;
             }
             
             .nav-links li {
-                margin: 10px 0;
+        width:100%;
             }
             
             .nav-links a {
                 display: block;
                 width: 100%;
                 padding: 12px 0;
+		    font-size: 18px;
+		    text-align: center;
+		    
             }
         }
 
@@ -800,7 +812,7 @@
                 });
             });
             */
-
+/*
 	    document.addEventListener("DOMContentLoaded", function() {
     // Improved mobile menu toggle functionality
     const menuToggle = document.getElementById('menuToggle');
@@ -838,9 +850,30 @@
                 }
             }
         });
-    });
+    }); */
     
     // Rest of your existing code...
+});
+
+	    document.addEventListener("DOMContentLoaded", function() {
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    // Toggle menu open/close when hamburger is clicked
+    menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('show');
+    });
+    
+    // Handle mobile nav link clicks
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function() {
+            // On mobile, close the menu after clicking a link
+            if (window.innerWidth <= 768) {
+                navLinks.classList.remove('show');
+            }
+        });
+    });
 });
             // Contact form submission with EmailJS
             const contactForm = document.getElementById('contactForm');
