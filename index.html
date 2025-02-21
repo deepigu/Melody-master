@@ -337,7 +337,7 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
         }
         
-        input, textarea, button {
+        input, textarea, button, select {
             width: 100%;
             margin: 10px 0;
             padding: 12px;
@@ -346,7 +346,7 @@
             font-family: 'Poppins', sans-serif;
         }
         
-        input:focus, textarea:focus {
+        input:focus, textarea:focus, select:focus {
             outline: none;
             box-shadow: 0 0 0 3px rgba(22, 160, 133, 0.5);
         }
@@ -585,14 +585,14 @@
             <img src="PHOTO-2025-02-19-02-14-15.jpg" alt="Melody Master Co Logo">
         </div>
         <nav>
-            <div class="menu-toggle" onclick="toggleMenu()">
+            <div class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
             </div>
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#request-song">Service</a></li>
-                <li><a href="#testimonials">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#request-song" class="nav-link">Service</a></li>
+                <li><a href="#testimonials" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -753,17 +753,55 @@
         </div>
     </footer>
 
-    <!-- EmailJS SDK - CORRECT VERSION -->
+    <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <script type="text/javascript">
         (function() {
-            // Initialize EmailJS with your PUBLIC key (not email address)
-            emailjs.init("service_49cltyg"); // REPLACE WITH YOUR ACTUAL PUBLIC KEY FROM EMAILJS DASHBOARD
+            // Initialize EmailJS with your PUBLIC key
+            emailjs.init("service_49cltyg"); // REPLACE WITH YOUR ACTUAL PUBLIC KEY
         })();
 
         document.addEventListener("DOMContentLoaded", function() {
-            // Form submission with EmailJS
+            // Improved mobile menu toggle functionality
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            // Toggle menu when hamburger icon is clicked
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('show');
+            });
+            
+            // Get all navigation links
+            const navLinkElements = document.querySelectorAll('.nav-link');
+            
+            // Add click event listeners to each nav link
+            navLinkElements.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default anchor behavior
+                    
+                    // Get the target section from the href attribute
+                    const targetId = this.getAttribute('href');
+                    
+                    // Find the target element
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // Close mobile menu if it's open
+                        navLinks.classList.remove('show');
+                        
+                        // Scroll to the target section smoothly
+                        // Add small delay to ensure menu closes first on mobile
+                        setTimeout(function() {
+                            targetElement.scrollIntoView({ 
+                                behavior: 'smooth' 
+                            });
+                        }, 100);
+                    }
+                });
+            });
+            
+            // Contact form submission with EmailJS
             const contactForm = document.getElementById('contactForm');
             const successMessage = document.getElementById('successMessage');
             const errorMessage = document.getElementById('errorMessage');
@@ -795,18 +833,7 @@
                     
                     // Send email using EmailJS
                     // Replace with your actual service ID and template ID
-                    emailjs.send('Deekarunakaran@gmail.com', 'Thank you for reaching out to Melody Masterco! We’re excited to help you with your first song request.
-
-To get started, please provide us with the following details:
-
-Song Title (if you have one in mind)
-Genre/Style Preference
-Any Special Requests or Customization
-Once we receive these details, we’ll review your request and provide you with the next steps, including timelines and pricing (if applicable).
-
-If you have any questions, feel free to ask—we’re happy to assist you!
-
-Looking forward to creating something special for you', templateParams)
+                    emailjs.send('Deekarunakaran@gmail.com', 'Thank you for reaching out to Melody Masterco! We're excited to help you with your first song request.', templateParams)
                         .then(function(response) {
                             // Hide loading spinner
                             loadingSpinner.style.display = 'none';
@@ -832,47 +859,7 @@ Looking forward to creating something special for you', templateParams)
                 });
             }
             
-            // Rest of your JavaScript remains the same
-            // Toggle mobile menu, hearts animation, etc.
-            
-            // Toggle mobile menu
-            window.toggleMenu = function() {
-                document.querySelector('.nav-links').classList.toggle('show');
-            };
-            
-            // Get all navigation links
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            // Add click event listeners to each nav link
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    // Get the target section from the href attribute
-                    const targetId = this.getAttribute('href');
-                    
-                    // If it's an anchor link (starts with #)
-                    if (targetId.startsWith('#')) {
-                        // Find the target element
-                        const targetElement = document.querySelector(targetId);
-                        
-                        if (targetElement) {
-                            // Prevent default anchor behavior
-                            e.preventDefault();
-                            
-                            // Scroll to the target section smoothly
-                            targetElement.scrollIntoView({ 
-                                behavior: 'smooth' 
-                            });
-                            
-                            // Close mobile menu if it's open
-                            document.querySelector('.nav-links').classList.remove('show');
-                        }
-                    }
-                });
-            });
-            
-            // Hearts animation code
-            setInterval(createFallingHeart, 300);
-            
+            // Hearts animation
             function createFallingHeart() {
                 const heart = document.createElement("div");
                 heart.innerHTML = "❤️";
@@ -886,7 +873,8 @@ Looking forward to creating something special for you', templateParams)
                 }, 5000);
             }
             
-            // Function to create floating 3D hearts
+            // Create
+			// Function to create floating 3D hearts
             function createHearts() {
                 const numberOfHearts = 20;
                 const container = document.body;
