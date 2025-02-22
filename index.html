@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- All your existing head content and styles remain the same -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Melody Master Co - Custom Song Service</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- All your CSS styles remain unchanged -->
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -141,14 +139,6 @@
         }
         
         @media screen and (max-width: 768px) {
-		header {
-                padding: 10px 5%;
-            }
-            
-            .logo img {
-                height: 40px;
-            }
-            
             .menu-toggle {
                 display: block;
             }
@@ -168,20 +158,16 @@
             
             .nav-links.show {
                 display: flex;
-		    z-index: 1000;
             }
             
             .nav-links li {
-        width:100%;
+                margin: 10px 0;
             }
             
             .nav-links a {
                 display: block;
                 width: 100%;
                 padding: 12px 0;
-		    font-size: 18px;
-		    text-align: center;
-		    
             }
         }
 
@@ -349,7 +335,7 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
         }
         
-        input, textarea, button, select {
+        input, textarea, button {
             width: 100%;
             margin: 10px 0;
             padding: 12px;
@@ -358,7 +344,7 @@
             font-family: 'Poppins', sans-serif;
         }
         
-        input:focus, textarea:focus, select:focus {
+        input:focus, textarea:focus {
             outline: none;
             box-shadow: 0 0 0 3px rgba(22, 160, 133, 0.5);
         }
@@ -550,66 +536,28 @@
             pointer-events: none;
             user-select: none;
         }
-
-        /* Form success and error message styles */
-        .message-container {
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.3s ease;
-            display: none;
-        }
-
-        .success-message {
-            background-color: rgba(46, 204, 113, 0.3);
-            border-left: 5px solid #2ecc71;
-            color: white;
-        }
-
-        .error-message {
-            background-color: rgba(231, 76, 60, 0.3);
-            border-left: 5px solid #e74c3c;
-            color: white;
-        }
-
-        /* Loading spinner */
-        .spinner {
-            display: none;
-            width: 40px;
-            height: 40px;
-            margin: 15px auto;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top: 4px solid #16A085;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
     </style>
 </head>
 <body>
-     <header>
+    <header>
         <div class="logo">
             <img src="PHOTO-2025-02-19-02-14-15.jpg" alt="Melody Master Co Logo">
         </div>
         <nav>
-            <div class="menu-toggle" id="menuToggle">
+            <div class="menu-toggle" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
             </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#hero" class="nav-link">Home</a></li>
-                <li><a href="#request-song" class="nav-link">Service</a></li>
-                <li><a href="#testimonials" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#request-song">Service</a></li>
+                <li><a href="#testimonials">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
     
-    <!-- Hero section -->
+    <!-- Rest of your HTML remains the same -->
+    
     <section id="hero">
         <h2>Create a Melody That's Truly Yours!</h2>
         <p>Your story deserves a unique soundtrack. Let Melody Master Co create a custom song just for you.</p>
@@ -633,9 +581,9 @@
         </div>
     </section>
 	
-    <section id="about">
+	    <section id="about">
         <h2>Song Crafters: Customized Musical Experiences</h2>
-        <p>At Song Crafters, we believe that music is one of the most powerful forms of expression. It has the ability to capture emotions, tell stories, and celebrate milestones like no other medium can. That's why we're dedicated to offering personalized musical experiences tailored to reflect your unique journey, emotions, or special moments.</p>
+        <p>At Song Crafters, we believe that music is one of the most powerful forms of expression. It has the ability to capture emotions, tell stories, and celebrate milestones like no other medium can. That’s why we’re dedicated to offering personalized musical experiences tailored to reflect your unique journey, emotions, or special moments.</p>
     </section>
 <section id="services">
         <h2>What We Can Do For You</h2>
@@ -657,11 +605,11 @@
     </section>
     <section id="process">
         <h2>Working Process</h2>
-        <p>Here's how we make your musical experience truly yours:</p>
+        <p>Here’s how we make your musical experience truly yours:</p>
         <div class="steps">
             <div class="step">
                 <h3>Step 1: Share Your Story</h3>
-                <p>Tell us about your emotions, event, or celebration. We'll work with you to understand your vision.</p>
+                <p>Tell us about your emotions, event, or celebration. We’ll work with you to understand your vision.</p>
             </div>
             <div class="step">
                 <h3>Step 2: Song Creation</h3>
@@ -669,7 +617,7 @@
             </div>
             <div class="step">
                 <h3>Step 3: Finalize & Produce</h3>
-                <p>Once you approve, we'll produce the track and deliver the polished final version.</p>
+                <p>Once you approve, we’ll produce the track and deliver the polished final version.</p>
             </div>
         </div>
     </section>
@@ -706,24 +654,17 @@
             </div>
         </div>
     </section>
-    
     <section id="request-song">
         <h2>Request Your Custom Song</h2>
-        <div class="message-container success-message" id="successMessage">
-            Your request has been sent successfully! We'll get back to you soon.
-        </div>
-        <div class="message-container error-message" id="errorMessage">
-            There was an error sending your request. Please try again.
-        </div>
-        <div class="spinner" id="loadingSpinner"></div>
-        <form id="contactForm">
+
+	<form id="songRequestForm">
             <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" required>
             
             <label for="email">Your Email:</label>
             <input type="email" id="email" name="email" required>
-            
-            <label for="phone">Your Phone:</label>
+
+		<label for="phone">Your Phone:</label>
             <input type="tel" id="phone" name="phone" required>
             
             <label for="story">Your Story:</label>
@@ -731,20 +672,19 @@
             
             <label for="preferences">Music Preferences:</label>
             <input type="text" id="preferences" name="preferences">
-            
+		
             <label for="package">Select Package:</label>
             <select id="package" name="package" required>
                 <option value="">Select a package</option>
                 <option value="Basic">Basic - ₹950</option>
                 <option value="Standard">Standard - ₹1500</option>
                 <option value="Premium">Premium - ₹2000</option>
-            </select>
+       </select>     
             
-            <button type="submit" id="submitButton">Submit Your Request</button>
+			<button type="submit">Submit Your Request</button>
         </form>
     </section>
-    
-     <section id="testimonials">
+    <section id="testimonials">
         <h2>What Our Clients Say</h2>
         <div class="testimonial">
             <p>"The custom song we received was absolutely perfect! It brought tears to our eyes." - Deepika</p>
@@ -753,253 +693,124 @@
             <p>"A truly unique gift. The song was exactly what we envisioned, and more." - Divya</p>
         </div>
     </section>
-    
+ 
     <footer id="contact">
-        <p>Contact Us:
-            <a href="mailto:melodymastersco@gmail.com">melodymastersco@gmail.com</a>
-        </p>
+	<p>Contact Us:
+		<a href="mailto:melodymastersco@gmail.com">melodymastersco@gmail.com</a></p>
         
         <div class="social-media">
             <a href="https://www.instagram.com/melodymastersco?igsh=c2QzcmFlNW84cjY2"><i class="fab fa-instagram"></i> Instagram</a>
             <a href="https://www.facebook.com/share/1GXxmjQk9j/"><i class="fab fa-facebook"></i> Facebook</a>
+            
         </div>
     </footer>
+    
+    <!-- The rest of your HTML content remains unchanged -->
 
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-    <script type="text/javascript">
-        (function() {
-            // Initialize EmailJS with your PUBLIC key
-            emailjs.init("service_49cltyg"); // REPLACE WITH YOUR ACTUAL PUBLIC KEY
-        })();/*
-        document.addEventListener("DOMContentLoaded", function() {
-            // Improved mobile menu toggle functionality
-            const menuToggle = document.getElementById('menuToggle');
-            const navLinks = document.getElementById('navLinks');
-            
-            // Toggle menu when hamburger icon is clicked
-            menuToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('show');
-            });
-            
-            // Get all navigation links
-            const navLinkElements = document.querySelectorAll('.nav-link');
-            
-            // Add click event listeners to each nav link
-            navLinkElements.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault(); // Prevent default anchor behavior
-                    
-                    // Get the target section from the href attribute
-                    const targetId = this.getAttribute('href');
-                    
-                    // Find the target element
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        // Close mobile menu if it's open
-                        navLinks.classList.remove('show');
-                        
-                        // Scroll to the target section smoothly
-                        // Add small delay to ensure menu closes first on mobile
-                        setTimeout(function() {
-                            targetElement.scrollIntoView({ 
-                                behavior: 'smooth' 
-                            });
-                        }, 100);
-                    }
-                });
-            });
-            */
-/*
-	    document.addEventListener("DOMContentLoaded", function() {
-    // Improved mobile menu toggle functionality
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-    
-    // Toggle menu when hamburger icon is clicked
-    menuToggle.addEventListener('click', function() {
-        navLinks.classList.toggle('show');
-    });
-    
-    // Get all navigation links
-    const navLinkElements = document.querySelectorAll('.nav-link');
-    
-    // Add click event listeners to each nav link
-    navLinkElements.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Get the target section from the href attribute
-            const targetId = this.getAttribute('href');
-            
-            // Find the target element
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                // Close mobile menu if it's open
-                if (window.innerWidth <= 768) {
-                    e.preventDefault(); // Prevent default anchor behavior on mobile
-                    navLinks.classList.remove('show');
-                    
-                    // Scroll to the target section after a small delay
-                    setTimeout(function() {
-                        targetElement.scrollIntoView({ 
-                            behavior: 'smooth' 
-                        });
-                    }, 300);
-                }
-            }
-        });
-    }); */
-    
-    // Rest of your existing code...
-});
-
-	    document.addEventListener("DOMContentLoaded", function() {
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-    
-    // Toggle menu open/close when hamburger is clicked
-    menuToggle.addEventListener('click', function() {
-        navLinks.classList.toggle('show');
-    });
-    
-    // Handle mobile nav link clicks
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        }
+         // Close menu when a nav item is clicked
     document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', function() {
-            // On mobile, close the menu after clicking a link
-            if (window.innerWidth <= 768) {
-                navLinks.classList.remove('show');
-            }
+        link.addEventListener('click', function () {
+            document.querySelector('.nav-links').classList.remove('show');
         });
     });
-});
-            // Contact form submission with EmailJS
-            const contactForm = document.getElementById('contactForm');
-            const successMessage = document.getElementById('successMessage');
-            const errorMessage = document.getElementById('errorMessage');
-            const loadingSpinner = document.getElementById('loadingSpinner');
-            const submitButton = document.getElementById('submitButton');
-
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(event) {
-                    event.preventDefault();
-                    
-                    // Show loading spinner
-                    loadingSpinner.style.display = 'block';
-                    submitButton.disabled = true;
-                    
-                    // Hide any existing messages
-                    successMessage.style.display = 'none';
-                    errorMessage.style.display = 'none';
-                    
-                    // Prepare template parameters
-                    const templateParams = {
-                        from_name: document.getElementById('name').value,
-                        from_email: document.getElementById('email').value,
-                        phone_number: document.getElementById('phone').value,
-                        story: document.getElementById('story').value,
-                        preferences: document.getElementById('preferences').value,
-                        selected_package: document.getElementById('package').value,
-                        to_name: "Melody Master Co"
-                    };
-                    
-                    // Send email using EmailJS
-                    // Replace with your actual service ID and template ID
-                    emailjs.send('Deekarunakaran@gmail.com', 'Thank you for reaching out to Melody Masterco! We're excited to help you with your first song request.', templateParams)
-                        .then(function(response) {
-                            // Hide loading spinner
-                            loadingSpinner.style.display = 'none';
-                            submitButton.disabled = false;
-                            
-                            // Show success message
-                            successMessage.style.display = 'block';
-                            
-                            // Reset form
-                            contactForm.reset();
-                            
-                            console.log('SUCCESS!', response.status, response.text);
-                        }, function(error) {
-                            // Hide loading spinner
-                            loadingSpinner.style.display = 'none';
-                            submitButton.disabled = false;
-                            
-                            // Show error message
-                            errorMessage.style.display = 'block';
-                            
-                            console.log('FAILED...', error);
-                        });
-                });
-            }
-            
-            // Hearts animation
-            function createFallingHeart() {
-                const heart = document.createElement("div");
-                heart.innerHTML = "❤️";
-                heart.classList.add("heart");
-                document.body.appendChild(heart);
-                heart.style.left = Math.random() * 100 + "vw";
-                heart.style.fontSize = Math.random() * 20 + 10 + "px";
-                heart.style.animationDuration = Math.random() * 2 + 3 + "s";
-                setTimeout(() => {
-                    heart.remove();
-                }, 5000);
-            }
-            
-            // Create
-			// Function to create floating 3D hearts
-            function createHearts() {
-                const numberOfHearts = 20;
-                const container = document.body;
-                
-                // Clear any existing hearts
-                const existingHearts = document.querySelectorAll('.heart');
-                existingHearts.forEach(heart => heart.remove());
-                
-                // Create new hearts
-                for (let i = 0; i < numberOfHearts; i++) {
-                    const heart = document.createElement('div');
-                    heart.className = 'heart';
-                    heart.innerHTML = '<i class="fas fa-heart"></i>';
-                    
-                    // Random position
-                    const startX = Math.random() * window.innerWidth;
-                    const startY = window.innerHeight + (Math.random() * 100);
-                    
-                    // Random size
-                    const size = 10 + (Math.random() * 30);
-                
-                    // Random animation duration
-                    const duration = 15 + (Math.random() * 15);
-                    const delay = Math.random() * 10;
-                    
-                    // Style the heart
-                    heart.style.left = `${startX}px`;
-                    heart.style.bottom = `-${startY}px`;
-                    heart.style.fontSize = `${size}px`;
-                    heart.style.animationDuration = `${duration}s`;
-                    heart.style.animationDelay = `${delay}s`;
-                    
-                    // Random rotation
-                    const rotation = Math.random() * 360;
-                    heart.style.transform = `perspective(500px) rotate(${rotation}deg)`;
-                    
-                    // Random color tint
-                    const hue = 340 + (Math.random() * 40); // shades of red and pink
-                    heart.style.color = `hsl(${hue}, 100%, 70%)`;
-                    
-                    // Add to document
-                    container.appendChild(heart);
-                }
-            }
-            
-            // Create hearts when page loads
-            createHearts();
-            
-            // Recreate hearts periodically
-            setInterval(createHearts, 30000);
+        // Your heart animation script
+        document.addEventListener("DOMContentLoaded", function () {
+            setInterval(createFallingHeart, 300);
         });
+        
+        function createFallingHeart() {
+            const heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.classList.add("heart");
+            document.body.appendChild(heart);
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = Math.random() * 20 + 10 + "px";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+		
+		//from here i added from try
+		
+		
+        // Function to create floating 3D hearts
+        function createHearts() {
+            const numberOfHearts = 20;
+            const container = document.body;
+            
+            // Clear any existing hearts
+            const existingHearts = document.querySelectorAll('.heart');
+            existingHearts.forEach(heart => heart.remove());
+            
+            // Create new hearts
+            for (let i = 0; i < numberOfHearts; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '<i class="fas fa-heart"></i>';
+                
+                // Random position
+                const startX = Math.random() * window.innerWidth;
+                const startY = window.innerHeight + (Math.random() * 100);
+                
+                // Random size
+                const size = 10 + (Math.random() * 30);
+                
+                // Random animation duration
+                const duration = 15 + (Math.random() * 15);
+                const delay = Math.random() * 10;
+                
+                // Style the heart
+                heart.style.left = `${startX}px`;
+                heart.style.bottom = `-${startY}px`;
+                heart.style.fontSize = `${size}px`;
+                heart.style.animationDuration = `${duration}s`;
+                heart.style.animationDelay = `${delay}s`;
+                
+                // Random rotation
+                const rotation = Math.random() * 360;
+                heart.style.transform = `perspective(500px) rotate(${rotation}deg)`;
+                
+                // Random color tint
+                const hue = 340 + (Math.random() * 40); // shades of red and pink
+                heart.style.color = `hsl(${hue}, 100%, 70%)`;
+                
+                // Add to document
+                container.appendChild(heart);
+            }
+        }
+        
+        // Create hearts when page loads
+        window.addEventListener('load', createHearts);
+        
+        // Recreate hearts periodically
+        setInterval(createHearts, 30000);
+
+	     document.getElementById("songRequestForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let phone = document.getElementById("phone").value;
+        let story = document.getElementById("story").value;
+        let preferences = document.getElementById("preferences").value;
+        let package = document.getElementById("package").value;
+        
+        let mailtoLink = `mailto:melodymastersco@gmail.com?subject=New Song Request&body=
+        Name: ${name}%0D%0A
+        Email: ${email}%0D%0A
+        Phone: ${phone}%0D%0A
+        Story: ${story}%0D%0A
+        Preferences: ${preferences}%0D%0A
+        Package: ${package}`;
+        
+        window.location.href = mailtoLink;
+        alert("Your request has been submitted! We will contact you soon.");
+    });
     </script>
 </body>
 </html>
