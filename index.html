@@ -790,6 +790,7 @@
         // Recreate hearts periodically
         setInterval(createHearts, 30000);
 
+	    /*
 	     document.getElementById("songRequestForm").addEventListener("submit", function(event) {
         event.preventDefault();
         
@@ -810,7 +811,28 @@
         
         window.location.href = mailtoLink;
         alert("Your request has been submitted! We will contact you soon.");
+    }); */
+	    document.getElementById("songRequestForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    const formData = new FormData(this);
+    
+    fetch('process-form.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+        if (data.success) {
+            this.reset(); // Clear form if submission was successful
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error submitting your request. Please try again.');
     });
+});
     </script>
 </body>
 </html>
