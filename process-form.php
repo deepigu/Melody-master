@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $package = $_POST['package'] ?? '';
 
     // Email settings
-    $to = "melodymastersco@gmail.com"; // Your email address
+    $to = "deekarunakaran@gmail.com"; // Your email address
     $subject = "New Song Request from " . htmlspecialchars($name);
 
     // Create email body
