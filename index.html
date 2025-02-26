@@ -137,7 +137,36 @@
             color: white;
             cursor: pointer;
         }
-        
+        .pricing {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.pricing-box {
+    background: rgba(0, 0, 0, 0.8); /* Black box with slight transparency */
+    padding: 20px;
+    border-radius: 10px;
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.pricing-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
         @media screen and (max-width: 768px) {
             .menu-toggle {
                 display: block;
@@ -299,12 +328,41 @@
                 max-width: 250px;
             }
             
-            .pricing-box {
+        /*    .pricing-box {
                 width: 100%;
                 max-width: 300px;
                 margin: 20px auto;
             }
-        }
+        } */
+
+	.pricing {
+        padding: 0 10px;
+        gap: 10px;
+    }
+    
+    .pricing-box {
+        width: calc(33.33% - 10px); /* Three columns on tablets */
+        padding: 15px;
+        min-width: 90px;
+    }
+    
+    .pricing-box h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .pricing-box p {
+        font-size: 12px;
+        margin: 5px 0;
+        line-height: 1.2;
+    }
+    
+    .pricing-box button {
+        padding: 8px;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+}	
         
         @media screen and (max-width: 480px) {
             .logo h1 {
@@ -318,11 +376,50 @@
             #hero h2 {
                 font-size: 24px;
             }
-            
+
+		.pricing-box {
+        width: calc(50% - 10px); /* Two columns on small phones */
+        padding: 10px;
+    }
+    
+    .pricing-box h3 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    
+    .pricing-box p {
+        font-size: 11px;
+        margin: 3px 0;
+    }
+    
+    .pricing-box button {
+        padding: 6px;
+        font-size: 12px;
+    }
+}
+
+/* Update text colors for better visibility on black */
+.pricing-box h3 {
+    color: #ff9a8b;
+    text-shadow: 0 0 5px rgba(255, 154, 139, 0.3);
+}
+
+.pricing-box p {
+    color: white;
+}
+
+.pricing-box .price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #16A085;
+    text-shadow: 0 0 5px rgba(22, 160, 133, 0.3);
+}
+        }
+            /*
             .pricing-box {
                 padding: 20px;
             }
-        }
+        } */
         
         /* Add back your other styles */
         form {
